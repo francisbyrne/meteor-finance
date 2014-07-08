@@ -21,6 +21,11 @@ MarketDataProvider
 ------
 This allows you to configure your own market data provider by setting the provider URLs and field mappings.
 
+#### YahooFinance
+This is currently the default provider. The (unofficial) API can be viewed [here](https://code.google.com/p/yahoo-finance-managed/wiki/CSVAPI) and a full list of the stock field mappings can be found [here](http://cliffngan.net/a/13).
+
+Field Mappings currently provided can be viewed [here](https://github.com/francisbyrne/meteor-finance/blob/master/lib/providers/yahoo.js).
+
 ### Basic Usage
 Instantiate a specific market data provider like so:
 ```
@@ -41,11 +46,6 @@ YahooFinance.convertFields(['symbol', 'name']);
 ### Methods
 - `MarketDataProvider.convertField(field)` - Takes a field name, e.g. `'symbol'`, returns the provider-specific field code, e.g. `'s'`.
 - `MarketDataProvider.convertFields(fields)` - Takes an array of field names, e.g. `['symbol', 'name']`, returns an array of provider-specific field codes, e.g. `['s', 'n']`.
-
-### YahooFinance
-This is currently the default provider. the API can be viewed [here](https://code.google.com/p/yahoo-finance-managed/wiki/CSVAPI) and a full list of the stock field mappings can be found [here](http://cliffngan.net/a/13).
-
-Field Mappings currently provided can be viewed [here](https://github.com/francisbyrne/meteor-finance/blob/master/lib/providers/yahoo.js).
 
 Dividends
 ------
