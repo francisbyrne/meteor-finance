@@ -1,0 +1,9 @@
+{
+  "name": "meteor-finance",
+  "description": "Provides Meteor collections for common stock market instruments, synced with a market data provider.",
+  "homepage": "https://github.com/francisbyrne/meteor-finance",
+  "author": "Francis Byrne <byrnify@gmail.com>",
+  "version": "0.0.1",
+  "git": "https://github.com/francisbyrne/meteor-finance.git",
+  "packages": {}
+}
