@@ -1,3 +1,7 @@
+var addBHP = function() {
+  Dividends.insert({'symbol': 'BHP.AX', 'date': new Date('July 7, 2014'), 'amount': 0.64});
+};
+
 Tinytest.add('Dividends: Collection works', function(test) {
   test.equal(Dividends.find({}).count(), 0);
   
@@ -15,3 +19,10 @@ Tinytest.add('Dividends: Collection works', function(test) {
 
   test.equal(Dividends.find({}).count(), 0);
 });
+
+// Tinytest.add('Dividends: refresh single dividend', function(test) {
+//   test.equal( Dividends.find({'symbol': 'BHP.AX'}).count(), 0 );
+//   Dividends.refresh({'symbol': 'BHP.AX'}, function(error, result) {
+//     test.equal( Dividends.find({'symbol': 'BHP.AX', 'date': new Date('Mar 6, 2013'), 'amount': 0.57}).count(), 1 );
+//   });
+// });

@@ -30,13 +30,22 @@ Field Mappings currently provided can be viewed [here](https://github.com/franci
 Instantiate a specific market data provider like so:
 ```
 YahooFinance = new MarketDataProvider({
-  quotesUrl: 'http://download.finance.yahoo.com/d/quotes.csv',
   fields: {
-    symbol: 's',
-    name  : 'n'
-    // ...and so on
+    'change'            : 'c1',
+    'changePercent'     : 'p2',
+    'daysRange'         : 'm',
+    'dividendYield'     : 'y',
+  },
+  getDividends: function(symbols, startDate, endDate, callback) {
+    ...
+  },
+  getStockQuotes: function(symbols, fields, callback) {
+    ...
+  },
+  getHistoricPrices: function(symbols, startDate, endDate, callback) {
+    ...
   }
-});
+};
 ```
 Then call provider methods on the specific provider object:
 ```
@@ -59,4 +68,4 @@ Dividends
 ```
 
 ### Methods
-- `Dividends.refresh(selector)` - Calls market data provider to refresh dividend info for dividends given by `selector`, which is any [Mongo-style Selector](http://docs.meteor.com/#selectors)
+- `Dividends.refresh(selector, callback)` - Asyncronously calls market data provider to refresh dividend info for dividends given by `selector`, which is any [Mongo-style Selector](http://docs.meteor.com/#selectors). Upon completion, executes `callback(error, results)`.

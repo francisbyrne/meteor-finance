@@ -6,6 +6,8 @@ Package.on_use(function (api, where) {
   api.add_files('lib/market_data_provider.js', ['client', 'server']);
   api.add_files('lib/providers/yahoo.js', ['client', 'server']);
   api.add_files('lib/dividends.js', ['client', 'server']);
+  
+  Npm.depends({'csv':"0.3.6"});
 
   api.export('MarketDataProvider', ['client', 'server']);
   api.export('YahooFinance', ['client', 'server']);
